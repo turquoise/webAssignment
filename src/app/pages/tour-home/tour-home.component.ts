@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-
+import { Subscription } from 'rxjs/Subscription';
 import { CommonService } from '../../services/services'
 import { fadeInContent } from '@angular/material';
 
@@ -11,12 +11,22 @@ import { fadeInContent } from '@angular/material';
 })
 export class TourHomeComponent implements OnInit {
   loading = false;
-  selectedTour: any;  
+  selectedTour: any;
   tourId: any;
+  subscription: Subscription;
 
-    constructor(private commonService: CommonService) { 
+    constructor(private commonService: CommonService) {
     }
 
     ngOnInit() {
+      this.getTour();
+
+    }
+
+    getTour() {
+      this.subscription = this.commonService.getTour().subscribe( tour => {
+        this.selectedTour = tour;
+        console.log('tour home ', this.selectedTour);
+      });
     }
 }

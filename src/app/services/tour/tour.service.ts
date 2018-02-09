@@ -27,9 +27,6 @@ export class TourService {
           console.log('data ', data);
           return data;
         })
-        // .subscribe(data => {
-        //   console.log('data ', data);
-        //   this.data = data;
-        // });
+        
     }    
 }

@@ -34,10 +34,13 @@ export class ToursComponent implements OnInit {
         this.tours = res;
         console.log('tours ', this.tours);
       })
-      
+
   }
 
   tourClicked(tour) {
     this.selectedTour = tour;
+    console.log('this.selectedTour ', this.selectedTour);
+    this.commonService.sendTour(tour);
+
   }
 }

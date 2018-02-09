@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Subscription';
 import { Router, RouterModule, ActivatedRoute, ParamMap } from '@angular/router';
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -13,19 +14,25 @@ import { TourService, CommonService } from "../../services/services";
 export class TourDetailsComponent implements OnInit {
   selectedTour: any;
   tourId: any;
+  subscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
-    private commonService: CommonService) 
+    private commonService: CommonService)
     {
       this.commonService.setTourId(this.route);
     }
 
   ngOnInit() {
     this.getTour();
+
   }
 
   getTour() {
-    this.selectedTour = this.commonService.getTour(); 
+    //this.commonService.getTour();
+    this.subscription = this.commonService.getTour().subscribe( tour => {
+      this.selectedTour = tour;
+      console.log('tour details ', this.selectedTour);
+    });
   }
 }
