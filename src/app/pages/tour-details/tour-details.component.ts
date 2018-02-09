@@ -32,7 +32,7 @@ export class TourDetailsComponent implements OnInit {
     //this.commonService.getTour();
     this.subscription = this.commonService.getTour().subscribe( tour => {
       this.selectedTour = tour;
-      console.log('tour details ', this.selectedTour);
+      //console.log('tour details ', this.selectedTour);
     });
   }
 }

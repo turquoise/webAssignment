@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router';
-import * as _ from 'lodash'; 
+import * as _ from 'lodash';
 
 import { CommonService } from "../../services/services";
 import { fadeInContent } from '@angular/material';
@@ -11,26 +12,43 @@ import { fadeInContent } from '@angular/material';
   styleUrls: ['./tour-trips.component.css']
 })
 export class TourTripsComponent implements OnInit {
-  selectedTrip: any;           
+  selectedTrip: any;
   trips: any;
+  selectedTravellers: any;
+  travellers: any = [];
+  subscription: Subscription;
+  result: any = [];
 
   constructor(
     private route: ActivatedRoute,
-    private commonService: CommonService) 
+    private commonService: CommonService)
     {
-      this.commonService.setTourId(this.route);      
+      this.commonService.setTourId(this.route);
     }
 
-  ngOnInit() {
-    this.getTour();
-  }
+    ngOnInit() {
+      this.getTour();
 
-  getTour() {    
-    if (this.commonService.getTour()) {
     }
-  }
+
+    getTour() {
+      this.subscription = this.commonService.getTour().subscribe( tour => {
+        this.selectedTrip = tour.Trips;
+        this.selectedTravellers = tour.Travellers;
+        console.log('tour trips ', this.selectedTrip);
+        console.log('tour trip travellers ', this.selectedTravellers);
+      });
+    }
+
+  // getTour() {
+  //   if (this.commonService.getTour()) {
+  //   }
+  // }
 
   serviceClicked(event, service) {
     this.selectedTrip = service;
   }
+
+
+
 }

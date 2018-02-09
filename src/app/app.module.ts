@@ -3,15 +3,17 @@ import { Http, HttpModule } from "@angular/http";
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { AppComponent } from './app.component';
-import { TourDetailsComponent, TourHomeComponent, ToursComponent, 
+import { TourDetailsComponent, TourHomeComponent, ToursComponent,
          TourTripsComponent, TourTravellersComponent, TourContactComponent, NotfoundComponent } from './pages/pages';
 
 import { TourService, CommonService } from "./services/services";
 import { RoutingModule } from "./routing/routing.module";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, 
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule,
          MatTabsModule, MatGridListModule, MatListModule, MatInputModule, MatSelectModule,
          MatTableModule, MatDatepickerModule, MatNativeDateModule, MatProgressSpinnerModule } from '@angular/material';
 
@@ -45,7 +47,8 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     MatTableModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FlexLayoutModule
   ],
   providers: [
     TourService,
