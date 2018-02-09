@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Subscription } from 'rxjs/Subscription';
 import { TourService, CommonService } from '../../services/services';
 
 @Component({
@@ -29,6 +29,12 @@ export class ToursComponent implements OnInit {
   }
 
   getTours() {
+    this.tourService.getAll()
+      .subscribe( res => {
+        this.tours = res;
+        console.log('tours ', this.tours);
+      })
+      
   }
 
   tourClicked(tour) {
