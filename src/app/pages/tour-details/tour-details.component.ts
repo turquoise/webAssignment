@@ -27,10 +27,6 @@ export class TourDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getTour();
-
-
-
-
   }
 
   getTour() {

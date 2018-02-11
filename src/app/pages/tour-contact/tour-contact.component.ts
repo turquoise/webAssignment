@@ -14,22 +14,22 @@ export class TourContactComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private commonService: CommonService)
+    private commonService: CommonService,
+    private tourService: TourService )
     {
       this.commonService.setTourId(this.route);
     }
 
   ngOnInit() {
-    //this.getTour();
+    this.getTour();
 
   }
 
-  // getTour() {
-  //   //this.commonService.getTour();
-  //   this.subscription = this.commonService.getTour().subscribe( tour => {
-  //     this.selectedContacts = tour.Contact;
-  //     //console.log('tour contacts ', this.selectedContacts);
-  //   });
-  // }
+  getTour() {
+    this.tourService.currentTour.subscribe( data => {
+      this.selectedContacts = data.Contact;
+      console.log('this.selectedTour from contacts ', this.selectedContacts);
+    });
+  }
 
 }

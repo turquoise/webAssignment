@@ -1,16 +1,15 @@
 <h1>Tour trips</h1>
 <div *ngIf="selectedTrip">
   <div *ngFor="let trip of selectedTrip">
-    <h4>{{ trip.Company }}</h4>
-    <h6>{{ trip.Date }}</h6>
-    <h6>{{ trip.TimeDepart }}</h6>
+    <h4>Company: {{ trip.Company }}</h4>
+    <h6>Trip Date: {{ trip.Date }}</h6>
+    <h6>Trip Depart: {{ trip.TimeDepart }}</h6>
     <div *ngFor="let traveller of trip.Travellers">
       <div *ngFor="let t of selectedTravellers">
         <div *ngIf="traveller === t.Id">
           {{t.Id }} - {{ t.Name }}
         </div>
       </div>
-
     </div>
   </div>
 </div>

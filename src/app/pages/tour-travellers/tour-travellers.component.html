@@ -1,6 +1,15 @@
 <h1>Tour travellers</h1>
-<div *ngIf="selectedTraveller">
-  <ul *ngFor="let traveller of selectedTraveller">
-    <li>{{ traveller.Name }}</li>
-  </ul>
-</div>
+<div *ngIf="selectedTravellers">
+  <div *ngFor="let traveller of selectedTravellers">
+    <div>{{traveller.Id }} - {{ traveller.Name }}</div>
+    <div *ngFor="let travelerTrip of travellerTrips" >
+      <div *ngIf="traveller.Id === travelerTrip.Id" >
+        {{ travelerTrip.Company }}
+      </div>
+    </div>
+    <hr>
+
+
+
+  </div> <!--*ngFor traveller of selectedTravellers -->
+</div> <!--*ngIf selectedTravellers -->

@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
 
-import { CommonService } from "../../services/services";
+import { CommonService, TourService } from "../../services/services";
 import { fadeInContent } from '@angular/material';
 
 @Component({
@@ -21,33 +21,29 @@ export class TourTripsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private commonService: CommonService)
+    private commonService: CommonService,
+    private tourService: TourService )
     {
       this.commonService.setTourId(this.route);
     }
 
     ngOnInit() {
-      //this.getTour();
-
+      this.getTour();
     }
 
-    // getTour() {
-    //   this.subscription = this.commonService.getTour().subscribe( tour => {
-    //     this.selectedTrip = tour.Trips;
-    //     this.selectedTravellers = tour.Travellers;
-    //     console.log('tour trips ', this.selectedTrip);
-    //     console.log('tour trip travellers ', this.selectedTravellers);
-    //   });
-    // }
+    getTour() {
+      this.tourService.currentTour.subscribe( data => {
+        this.selectedTrip = data.Trips;
+        this.selectedTravellers = data.Travellers;
+        //console.log('this.selectedTrip from trips ', this.selectedTrip);
+        //console.log('this.selectedTravellers from trips ', this.selectedTravellers);
+      });
+    }
 
-  // getTour() {
-  //   if (this.commonService.getTour()) {
-  //   }
-  // }
 
-  serviceClicked(event, service) {
-    this.selectedTrip = service;
-  }
+    serviceClicked(event, service) {
+      this.selectedTrip = service;
+    }
 
 
 
