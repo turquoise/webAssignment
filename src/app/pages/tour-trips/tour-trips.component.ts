@@ -27,18 +27,18 @@ export class TourTripsComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.getTour();
+      //this.getTour();
 
     }
 
-    getTour() {
-      this.subscription = this.commonService.getTour().subscribe( tour => {
-        this.selectedTrip = tour.Trips;
-        this.selectedTravellers = tour.Travellers;
-        console.log('tour trips ', this.selectedTrip);
-        console.log('tour trip travellers ', this.selectedTravellers);
-      });
-    }
+    // getTour() {
+    //   this.subscription = this.commonService.getTour().subscribe( tour => {
+    //     this.selectedTrip = tour.Trips;
+    //     this.selectedTravellers = tour.Travellers;
+    //     console.log('tour trips ', this.selectedTrip);
+    //     console.log('tour trip travellers ', this.selectedTravellers);
+    //   });
+    // }
 
   // getTour() {
   //   if (this.commonService.getTour()) {

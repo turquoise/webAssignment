@@ -20,16 +20,16 @@ export class TourContactComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getTour();
+    //this.getTour();
 
   }
 
-  getTour() {
-    //this.commonService.getTour();
-    this.subscription = this.commonService.getTour().subscribe( tour => {
-      this.selectedContacts = tour.Contact;
-      //console.log('tour contacts ', this.selectedContacts);
-    });
-  }
+  // getTour() {
+  //   //this.commonService.getTour();
+  //   this.subscription = this.commonService.getTour().subscribe( tour => {
+  //     this.selectedContacts = tour.Contact;
+  //     //console.log('tour contacts ', this.selectedContacts);
+  //   });
+  // }
 
 }

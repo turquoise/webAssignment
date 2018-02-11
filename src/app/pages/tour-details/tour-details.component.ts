@@ -15,10 +15,12 @@ export class TourDetailsComponent implements OnInit {
   selectedTour: any;
   tourId: any;
   subscription: Subscription;
+  message;
 
   constructor(
     private route: ActivatedRoute,
-    private commonService: CommonService)
+    private commonService: CommonService,
+    private tourService: TourService )
     {
       this.commonService.setTourId(this.route);
     }
@@ -26,13 +28,23 @@ export class TourDetailsComponent implements OnInit {
   ngOnInit() {
     this.getTour();
 
+
+
+
   }
 
   getTour() {
-    //this.commonService.getTour();
-    this.subscription = this.commonService.getTour().subscribe( tour => {
-      this.selectedTour = tour;
-      //console.log('tour details ', this.selectedTour);
+    this.tourId = +this.route.snapshot.paramMap.get('id');
+    console.log('tourId ', this.tourId);
+    this.tourService.getTourId(this.tourId);
+
+    this.tourService.currentTour.subscribe( data => {
+      this.selectedTour = data;
+      console.log('this.selectedTour from details ', this.selectedTour);
     });
+
+
   }
+
+
 }

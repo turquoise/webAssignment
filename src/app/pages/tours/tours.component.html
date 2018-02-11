@@ -1,8 +1,11 @@
 <h1>Tours</h1>
-<ul>
-  <li *ngFor="let tour of tours" (click)="tourClicked(tour)" [class.selected]="tour === selectedTour">
-    {{ tour.Name }}
-  </li>
-</ul>
-<app-tour-home></app-tour-home>
-
+<div>
+  <div *ngFor="let tour of tours" [class.selected]="tour === selectedTour">
+    <h1>
+        <a routerLink="/tour/{{tour.Id}}">
+          <span>{{ tour.Id }} </span>{{ tour.Name }}
+        </a>
+    </h1>
+    <h2>{{ tour.ArtistName }} </h2>
+  </div>
+</div>

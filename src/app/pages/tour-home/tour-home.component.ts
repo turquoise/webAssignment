@@ -19,14 +19,14 @@ export class TourHomeComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.getTour();
+      //this.getTour();
 
     }
 
-    getTour() {
-      this.subscription = this.commonService.getTour().subscribe( tour => {
-        this.selectedTour = tour;
-        //console.log('tour home ', this.selectedTour);
-      });
-    }
+    // getTour() {
+    //   this.subscription = this.commonService.getTour().subscribe( tour => {
+    //     this.selectedTour = tour;
+    //     console.log('tour home ', this.selectedTour);
+    //   });
+    // }
 }
