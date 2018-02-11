@@ -53,7 +53,15 @@ export class TourTravellersComponent implements OnInit {
             //console.log('traveller ', traveller);
             if (traveller.Id === tripId) {
               //console.log('traveller.Id, traveller.Name, tripData.Company ', traveller.Id, traveller.Name, tripData.Company);
-              this.travellerTrips.push({'Id': traveller.Id, 'Name': traveller.Name, 'Company': tripData.Company});
+              this.travellerTrips.push(
+                {
+                  'Id': traveller.Id,
+                  'Name': traveller.Name,
+                  'Company': tripData.Company,
+                  'Date': tripData.Date,
+                  'TimeDepart': tripData.TimeDepart
+                }
+              );
               console.log('this.travellerTrips ', this.travellerTrips);
             }
           })
