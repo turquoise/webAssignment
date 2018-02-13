@@ -20,7 +20,6 @@ export class TourTripsComponent implements OnInit {
   travellers: any = [];
   subscription: Subscription;
   result: any = [];
-  public cols: Observable<number>;
 
 
   constructor(
@@ -34,7 +33,6 @@ export class TourTripsComponent implements OnInit {
 
     ngOnInit() {
       this.getTour();
-
 
     }
 

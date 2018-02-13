@@ -19,8 +19,12 @@
 
 .heading-image img {
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
   width:150px;
   height: 150px;
   border-radius: 75%;
+}
+
+.heading-text {
+  margin-top:40px;
 }
