@@ -1,5 +1,6 @@
 <h1>Tour trips</h1>
-<div *ngIf="selectedTrip">
+<div *ngIf="selectedTrip" fxLayout.md="row" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" >
+
   <div *ngFor="let trip of selectedTrip">
     <h4>Company: {{ trip.Company }}</h4>
     <h6>Trip Date: {{ trip.Date }}</h6>
@@ -12,4 +13,28 @@
       </div>
     </div>
   </div>
+
 </div>
+
+<!--<h1>Tour trips</h1>
+<div *ngIf="selectedTrip" rowHeight="fit">
+  <mat-grid-list cols="2" rowHeight="fit" >
+    <mat-grid-tile>
+        <mat-card>
+            <div *ngFor="let trip of selectedTrip">
+                <h4>Company: {{ trip.Company }}</h4>
+                <h6>Trip Date: {{ trip.Date }}</h6>
+                <h6>Trip Depart: {{ trip.TimeDepart }}</h6>
+                <div *ngFor="let traveller of trip.Travellers">
+                  <div *ngFor="let t of selectedTravellers">
+                    <div *ngIf="traveller === t.Id">
+                      {{t.Id }} - {{ t.Name }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>-->
+
