@@ -1,9 +1,31 @@
 a {
   text-decoration: none;
-  color: white;
+  color: #777;
 }
 
 a:hover,
 a:active {
+  color: lightgrey;
+}
+
+mat-toolbar {
+  /*background-color: #eee;*/
+  background-color: #fff;
+}
+
+mat-icon {
+  font-size: 40px;
+  padding-top: 5px;
+  padding-right: 40px;
+}
+
+.text {
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  font-size: 24px;
+}
+
+.text:hover,
+.text:active {
   color: lightgrey;
 }

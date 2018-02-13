@@ -1,0 +1,136 @@
+.tours {
+  padding-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2 {
+  margin-left: 20px;
+  color: #fff;
+}
+
+.europe {
+  /*background-image: linear-gradient( to right bottom, rgba(201,211,226, 0.8),
+  rgba(201,211,226, 0.8)),
+  url('/assets/images/atik-sulianami-474058.jpg');*/
+  padding-top: 40px;
+  background-image: url('/assets/images/alex-williams-535517.jpg');
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  position: relative;
+}
+
+.europe .overlay {
+  background: rgba(174, 179, 186, .8);
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.artist-name-europe:active,
+.artist-name-europe:hover,
+.name-europe:active,
+.name-europe:hover  {
+  color:#e81d86;
+}
+
+.europe-text {
+  padding-top:30px;
+  padding-left: 20px;
+  background-color: #e81d86;
+  height: 100px;
+  margin: 0;
+  color:#fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+.asia {
+  /*background-image: linear-gradient( to right bottom, rgba(201,211,226, 0.8),
+  rgba(201,211,226, 0.8)),
+  url('/assets/images/atik-sulianami-474058.jpg'); */
+  padding-top: 40px;
+  background-image: url('/assets/images/atik-sulianami-474058.jpg');
+  background-color: salmon;
+  background-size: cover;
+  height:350px;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  position: relative;
+}
+
+.asia .overlay {
+  background: rgba(174, 179, 186, .8);
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.artist-name-asia:active,
+.artist-name-asia:hover,
+.name-asia:active,
+.name-asia:hover  {
+  color:#3c95c1;
+}
+
+.asia-text {
+  padding-top:30px;
+  padding-left: 20px;
+  background-color: #3c95c1;
+  height: 100px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+.usa {
+  /*background-image: linear-gradient( to right bottom, rgba(201,211,226, 0.8),
+  rgba(201,211,226, 0.8)),
+  url('/assets/images/atik-sulianami-474058.jpg');*/
+  padding-top: 40px;
+  background-image: url('/assets/images/umer-sayyam-51872.jpg');
+  background-color: salmon;
+  background-size: cover;
+  height:350px;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  position: relative;
+}
+
+.usa .overlay {
+  background: rgba(174, 179, 186, .8);
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.artist-name-usa:active,
+.artist-name-usa:hover,
+.name-usa:active,
+.name-usa:hover  {
+  color:#5f2b7d;
+}
+
+.usa-text {
+  padding-top:30px;
+  padding-left: 20px;
+  background-color: #5f2b7d;
+  height: 100px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+.start {
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.end {
+  font-weight: bold;
+}

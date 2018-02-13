@@ -1,11 +1,82 @@
-<h1>Tours</h1>
-<div>
-  <div *ngFor="let tour of tours" [class.selected]="tour === selectedTour">
+
+  <!-- <h1>Tours</h1> -->
+  <!--<div *ngFor="let tour of tours" [class.selected]="tour === selectedTour">
     <h1>
         <a routerLink="/tour/{{tour.Id}}">
           <span>{{ tour.Id }} </span>{{ tour.Name }}
         </a>
     </h1>
     <h2>{{ tour.ArtistName }} </h2>
+  </div> -->
+
+
+  <div fxLayout.md="row" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="5px" *ngIf="tours" class="tours">
+    <div fxFlex="33.3%" >
+      <div class="europe" >
+        <a routerLink="/tour/{{ tours[0].Id }}" >
+          <div class="overlay">
+            <h1 class="artist-name-europe">{{ tours[0].ArtistName }}</h1>
+            <h2 class="name-europe">{{ tours[0].Name }}</h2>
+          </div>
+        </a>
+      </div>
+      <div class="europe-text">
+
+        <div fxLayout="row">
+          <div class="start" fxFlex="30%">Start Date:</div>
+          <div fxFlex="70%">{{ tours[0].DateStart | date:'fullDate' }}</div>
+        </div>
+        <div>
+          <div class="end" fxFlex="30%">End Date:</div>
+          <div fxFlex="70%">{{ tours[0].DateEnd | date:'fullDate' }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div fxFlex="33.3%" >
+        <div class="asia" >
+          <a routerLink="/tour/{{ tours[1].Id }}">
+            <div class="overlay">
+              <h1 class="artist-name-asia" > {{ tours[1].ArtistName }}</h1>
+              <h2 class="name-asia">{{ tours[1].Name }}</h2>
+            </div>
+          </a>
+        </div>
+        <div class="asia-text">
+
+          <div fxLayout="row">
+            <div class="start" fxFlex="30%">Start Date:</div>
+            <div fxFlex="70%">{{ tours[1].DateStart | date:'fullDate' }}</div>
+          </div>
+          <div>
+            <div class="end" fxFlex="30%">End Date:</div>
+            <div fxFlex="70%">{{ tours[1].DateEnd | date:'fullDate'}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlex="33.3%" >
+          <div class="usa" >
+            <a routerLink="/tour/{{ tours[2].Id }}" >
+              <div class="overlay">
+                <h1 class="artist-name-usa" >{{ tours[2].ArtistName }}</h1>
+                <h2 class="name-usa" >{{ tours[2].Name }}</h2>
+              </div>
+            </a>
+          </div>
+          <div class="usa-text">
+
+            <div fxLayout="row" >
+              <div class="start" fxFlex="30%">Start Date:</div>
+              <div fxFlex="70%">{{ tours[2].DateStart | date:'fullDate' }}</div>
+            </div>
+            <div fxLayout="row" >
+              <div class="end" fxFlex="30%">End Date:</div>
+              <div fxFlex="70%">{{ tours[2].DateEnd | date:'fullDate' }}</div>
+            </div>
+          </div>
+        </div>
   </div>
-</div>
+
+
+
