@@ -16,6 +16,12 @@ export class TourDetailsComponent implements OnInit {
   tourId: any;
   subscription: Subscription;
   message;
+  images: [
+    '/assets/images/tour1.png',
+    '/assets/images/tour2.png',
+    '/assets/images/tour3.png'
+  ];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +33,27 @@ export class TourDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getTour();
+
+  }
+
+  getColor() {
+    if (this.tourId === 1) {
+      return '#e81d86';
+    } else if (this.tourId === 2) {
+      return '#3c95c1';
+    } else if (this.tourId === 3) {
+      return '#5f2b7d';
+    }
+  }
+
+  getImage() {
+    if (this.tourId === 1) {
+      return '/assets/images/tour1.png';
+    } else if (this.tourId === 2) {
+      return '/assets/images/tour2.png';
+    } else if (this.tourId === 3) {
+      return '/assets/images/tour3.png';
+    }
   }
 
   getTour() {

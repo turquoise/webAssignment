@@ -1,8 +1,16 @@
-<h1>Tour contact</h1>
-<!--<div *ngIf="selectedContacts">
-  <h4>{{ selectedContacts.Name}} </h4>
-  <h4>{{ selectedContacts.Email}}</h4>
-  <h4>{{ selectedContacts.Phone }}</h4>
-
-</div> -->
+<h3>Tour contact</h3>
+<div *ngIf="selectedContacts">
+  <div fxLayout="row" >
+    <div fxFlex="30%" >Name:</div>
+    <div fxFlex="70%" > {{ selectedContacts.Name}}</div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="30%"  >Email:</div>
+    <div fxFlex="70%"> {{ selectedContacts.Email}}</div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="30%" >Phone:</div>
+    <div fxFlex="70%">{{ selectedContacts.Phone }}</div>
+  </div>
+</div>
 

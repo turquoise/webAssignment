@@ -1,4 +1,42 @@
-<h1>{{ tourId }} - {{ selectedTour.Name }}</h1>
-<div *ngIf="selectedTour">
-  <h2>{{ selectedTour.Name}}</h2>
+
+<div fxLayout.md="row" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column"  *ngIf="selectedTour">
+  <div class="main" fxFlex="50%">
+    <div class="heading" fxLayout="row" >
+      <div class="heading-image"  fxFlex="30%">
+        <img src="{{ getImage()}}" alt="image" />
+      </div>
+      <div class="heading-text"  fxFlex="70%">
+        <h1>{{ selectedTour.ArtistName}}</h1>
+        <h1>{{ tourId }} - {{ selectedTour.Name }}</h1>
+      </div>
+    </div>
+
+    <div class="about">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus lobortis, ultricies dui fringilla, tempus ex.
+        </p>
+        <p>
+            Vestibulum vestibulum erat vitae sodales pretium. Aliquam commodo laoreet erat, non fermentum neque ultricies a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+        </p>
+
+    </div>
+
+  </div>
+
+  <div class="information"  fxFlex="50%" [ngStyle]="{'background-color': getColor()}">
+    <h2>Host: {{ selectedTour.Host }} </h2>
+    <h3>Dates</h3>
+    <div fxLayout="row">
+      <div class="start" fxFlex="30%">Start Date:</div>
+      <div fxFlex="70%">{{ selectedTour.DateStart | date:'fullDate' }}</div>
+    </div>
+    <div>
+      <div class="end" fxFlex="30%">End Date:</div>
+      <div fxFlex="70%">{{ selectedTour.DateEnd | date:'fullDate' }}</div>
+    </div>
+    <div class="contact">
+      <app-tour-contact></app-tour-contact>
+    </div>
+  </div>
+
 </div>

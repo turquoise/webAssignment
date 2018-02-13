@@ -1,0 +1,25 @@
+
+
+.information {
+  margin-top:40px;
+  padding-left: 20px;
+  height:300px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  margin-right: 20px;
+}
+
+.main {
+  margin-left: 20px;
+}
+
+.about {
+  width: 90%;
+}
+
+.heading-image img {
+  margin-top: 20px;
+  width:150px;
+  height: 150px;
+  border-radius: 75%;
+}
