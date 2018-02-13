@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { ObservableMedia } from '@angular/flex-layout';
 import * as _ from 'lodash';
 
 import { CommonService, TourService } from "../../services/services";
@@ -18,17 +20,22 @@ export class TourTripsComponent implements OnInit {
   travellers: any = [];
   subscription: Subscription;
   result: any = [];
+  public cols: Observable<number>;
+
 
   constructor(
     private route: ActivatedRoute,
     private commonService: CommonService,
-    private tourService: TourService )
+    private tourService: TourService,
+    private observableMedia: ObservableMedia  )
     {
       this.commonService.setTourId(this.route);
     }
 
     ngOnInit() {
       this.getTour();
+
+
     }
 
     getTour() {

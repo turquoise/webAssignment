@@ -1,6 +1,14 @@
 <h1>Tour trips</h1>
-<div *ngIf="selectedTrip" fxLayout.md="row" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" >
+<mat-grid-list [cols]="cols" gutterSize="10px">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>2</mat-grid-tile>
+    <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile>
+    <mat-grid-tile>5</mat-grid-tile>
+    <mat-grid-tile>6</mat-grid-tile>
+  </mat-grid-list>
 
+<div *ngIf="selectedTrip" >
   <div *ngFor="let trip of selectedTrip">
     <h4>Company: {{ trip.Company }}</h4>
     <h6>Trip Date: {{ trip.Date }}</h6>
@@ -13,7 +21,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <!--<h1>Tour trips</h1>
