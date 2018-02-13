@@ -1,15 +1,26 @@
-<h1>Tour travellers</h1>
-<div *ngIf="selectedTravellers">
+
+<div *ngIf="selectedTravellers" class="travellers">
+    <h1>Tour travellers</h1>
   <div *ngFor="let traveller of selectedTravellers">
-    <div>{{traveller.Id }} - {{ traveller.Name }}</div>
+    <h2>{{traveller.Id }} - {{ traveller.Name }}</h2>
     <div *ngFor="let travellerTrip of travellerTrips" >
       <div *ngIf="traveller.Id === travellerTrip.Id" >
-        <div>Company: {{ travellerTrip.Company }}</div>
-        <div>Trip Date: {{ travellerTrip.Date }}</div>
-        <div>Time Depart: {{ travellerTrip.TimeDepart }}</div>
+        <table class="timetable">
+          <tr>
+            <th>Company</th>
+            <th>Trip Date</th>
+            <th>Time Depart</th>
+          </tr>
+            <tr>
+              <td>{{ travellerTrip.Company }}</td>
+              <td>{{ travellerTrip.Date | date }}</td>
+              <td>{{ travellerTrip.TimeDepart }}</td>
+            </tr>
+        </table>
+        </div>
+
       </div>
+      <hr >
       </div>
-      <hr>
 
     </div>
-  </div>

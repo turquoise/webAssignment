@@ -1,0 +1,25 @@
+
+.travellers {
+  margin-left: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.timetable {
+  width: 80%;
+}
+
+table {
+  border-spacing: 10px;
+  background-color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+th, td {
+  text-align: left;
+  width:100px;
+}
+
+th {
+  background-color:grey;
+  color: #fff;
+}

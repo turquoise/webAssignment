@@ -1,23 +1,26 @@
 
 <div fxLayout.md="row" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column"  *ngIf="selectedTour">
   <div class="main" fxFlex="50%">
-    <div class="heading" fxLayout="row" >
+    <div class="heading" fxLayout.md="row"  fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column">
       <div class="heading-image"  fxFlex="30%">
         <img src="{{ getImage()}}" alt="image" />
       </div>
       <div class="heading-text"  fxFlex="70%">
         <h1>{{ selectedTour.ArtistName}}</h1>
-        <h1>{{ tourId }} - {{ selectedTour.Name }}</h1>
+        <h1>{{ selectedTour.Name }}</h1>
       </div>
     </div>
 
     <div class="about">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus lobortis, ultricies dui fringilla, tempus ex.
-        </p>
-        <p>
-            Vestibulum vestibulum erat vitae sodales pretium. Aliquam commodo laoreet erat, non fermentum neque ultricies a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-        </p>
+      <mat-card>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus lobortis, ultricies dui fringilla, tempus ex.
+          </p>
+          <p>
+              Vestibulum vestibulum erat vitae sodales pretium. Aliquam commodo laoreet erat, non fermentum neque ultricies a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+          </p>
+
+      </mat-card>
 
     </div>
 
