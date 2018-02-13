@@ -19,6 +19,9 @@
             <h2 class="name-europe">{{ tours[0].Name }}</h2>
           </div>
         </a>
+        <a routerLink="/tour/{{ tours[0].Id }}">
+          <div class="europe-button">More Details</div>
+        </a>
       </div>
       <div class="europe-text">
 
@@ -41,6 +44,10 @@
               <h2 class="name-asia">{{ tours[1].Name }}</h2>
             </div>
           </a>
+          <a routerLink="/tour/{{ tours[1].Id }}">
+            <div class="asia-button">More Details</div>
+          </a>
+
         </div>
         <div class="asia-text">
 
@@ -63,6 +70,10 @@
                 <h2 class="name-usa" >{{ tours[2].Name }}</h2>
               </div>
             </a>
+            <a routerLink="/tour/{{ tours[2].Id }}">
+              <div class="usa-button">More Details</div>
+            </a>
+
           </div>
           <div class="usa-text">
 
