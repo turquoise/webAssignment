@@ -62,7 +62,7 @@ export class TourTravellersComponent implements OnInit {
                   'TimeDepart': tripData.TimeDepart
                 }
               );
-              console.log('this.travellerTrips ', this.travellerTrips);
+              //console.log('this.travellerTrips ', this.travellerTrips);
             }
           })
         });

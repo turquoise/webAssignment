@@ -1,8 +1,31 @@
-<h1>Tour trips</h1>
+<h1 class="trips">Tour trips</h1>
 
-<div *ngIf="selectedTrip" >
+<div *ngIf="selectedTrip" class="trips">
   <div *ngFor="let trip of selectedTrip">
-    <h4>Company: {{ trip.Company }}</h4>
+    <table class="table table-striped">
+      <tr>
+        <th>Company</th>
+        <th>Trip Date</th>
+        <th>Trip Depart</th>
+        <th>Travellers</th>
+      </tr>
+      <tr>
+        <td>{{ trip.Company }}</td>
+        <td>{{ trip.Date  | date:'longDate'}}</td>
+        <td>{{ trip.TimeDepart }}</td>
+        <td>
+            <div *ngFor="let traveller of trip.Travellers">
+                <div *ngFor="let t of selectedTravellers">
+                  <div *ngIf="traveller === t.Id">
+                    {{t.Id }} - {{ t.Name }}
+                  </div>
+                </div>
+              </div>
+        </td>
+      </tr>
+    </table>
+
+   <!-- <h4>Company: {{ trip.Company }}</h4>
     <h6>Trip Date: {{ trip.Date }}</h6>
     <h6>Trip Depart: {{ trip.TimeDepart }}</h6>
     <div *ngFor="let traveller of trip.Travellers">
@@ -11,6 +34,6 @@
           {{t.Id }} - {{ t.Name }}
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 </div>

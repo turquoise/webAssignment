@@ -5,7 +5,7 @@
     <h2>{{traveller.Id }} - {{ traveller.Name }}</h2>
     <div *ngFor="let travellerTrip of travellerTrips" >
       <div *ngIf="traveller.Id === travellerTrip.Id" >
-        <table class="timetable">
+        <table class="table timetable table-striped">
           <tr>
             <th>Company</th>
             <th>Trip Date</th>
